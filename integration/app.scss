@@ -1,0 +1,103 @@
+@use "./sass/colors";
+
+
+html {
+    background: colors.$light;
+    
+    body {
+        padding: 0;
+        margin: 0;
+
+        #app {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    header{
+        padding: 2em 4em;
+        background-color: colors.$dark;
+    
+        h1{
+            color: colors.$light;
+            font-size: 2em;
+            text-align: center;
+        }
+    }
+
+    main {
+        margin: 5em auto auto;
+    }
+}
+
+
+.todolist {
+    padding: 4em;
+    background: white;
+    box-shadow: 0 0 6px 0 #999;
+    border-radius: 5px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid colors.$dark;
+        margin: 0 0 1em 0;
+
+        input {
+            border-radius: 5px;
+            padding: .5em;
+            border: 1px solid colors.$dark;
+        }
+
+        button {
+            margin: 1em 0 1em auto;
+            background: colors.$green;
+            color: white;
+            font-weight: bold;
+        }
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1em;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: .25em;
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: .5em 1em;
+            border-radius: 10px;
+            display: flex;
+
+            &:nth-child(even) {
+                background: colors.$grey;
+            }
+
+            select {
+                margin: auto 0 auto auto;
+            }
+        }
+    }
+}
+
+
+.button {
+    padding: .5em 1em; 
+    border-radius: .5em;
+    font-size: 1em;
+    background-color: transparent;
+    color: colors.$blue;
+    border: 1px solid;
+
+    &.active {
+        background: colors.$blue;
+        color: colors.$light;
+    }
+}
